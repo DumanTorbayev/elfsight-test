@@ -7,6 +7,7 @@ import {takePhotos} from "../../store/photos/selector";
 import {Button} from "../UI/Button";
 import {Popup} from "../UI/Popup";
 import {Carousel} from "../Carousel";
+import {Preloader} from "../UI/Preloader";
 
 export const Photo = () => {
         const {id} = useParams()
@@ -28,7 +29,7 @@ export const Photo = () => {
         }
 
         if (loading) {
-            return (<h1>Загрузка...</h1>)
+            return (<Preloader />)
         }
 
         return (

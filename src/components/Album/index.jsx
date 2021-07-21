@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 import {getLoading, getMergedAlbums} from "../../store/albums/selector";
 import {Link} from "react-router-dom";
 import {Button} from "../UI/Button";
+import {Preloader} from "../UI/Preloader";
 
 export const Album = () => {
     const {id} = useParams()
@@ -29,7 +30,7 @@ export const Album = () => {
     }
 
     if(loading) {
-        return (<h1>Загрузка...</h1>)
+        return (<Preloader />)
     }
 
     return (
@@ -40,11 +41,16 @@ export const Album = () => {
             </div>
             <div className={scss.grid}>
                 {albums.map(({id, photos, title}) => (
-                    <Link to={`/photo/${id}`} className={scss.item} key={`${id}`}>
-                        <img className={scss.img} src={photos[0]?.thumbnailUrl} alt="image"/>
-                        <h2 className={scss.name}>{title}</h2>
-                        <p className={scss['photo-count']}>Кол-во фото: {photos.length}</p>
-                    </Link>
+                    <div className={scss.item} key={`${id}`}>
+                        <div className={scss.img}>
+                            <img className={scss.img} src={photos[0]?.thumbnailUrl} alt={title}/>
+                        </div>
+                        <div className={scss['text-wrap']}>
+                            <h2 className={scss.name}>{title}</h2>
+                            <p className={scss['photo-count']}>Кол-во фото: {photos.length}</p>
+                        </div>
+                        <Link className={`btn-primary ${scss.link}`} to={`/photo/${id}`}>View</Link>
+                    </div>
                 ))}
             </div>
         </>

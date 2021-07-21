@@ -4,17 +4,16 @@
     grid-gap: 15px;
 
     .item {
-        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid rgba(0, 0, 0 ,.5);
         padding: 10px;
+        border-radius: 10px;
         color: #000;
     }
 
     .name {
-        margin-bottom: 15px;
-    }
-
-    .link {
-        text-decoration: none;
-        color: #7f7d7d;
+        margin-right: 15px;
     }
 }

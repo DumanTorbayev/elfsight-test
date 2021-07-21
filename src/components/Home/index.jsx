@@ -20,7 +20,7 @@ export const Home = () => {
                 {users.map(({name, id}) => (
                     <div key={`${id}`} className={scss.item}>
                         <h3 className={scss.name}>{name}</h3>
-                        <Link className={scss.link} to={`/album/${id}`}>View album</Link>
+                        <Link className={`btn-primary`} to={`/album/${id}`}>View album</Link>
                     </div>
                 ))}
             </div>
