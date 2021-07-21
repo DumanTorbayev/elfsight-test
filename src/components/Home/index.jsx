@@ -15,7 +15,7 @@ export const Home = () => {
 
     return (
         <>
-            <h1>Users</h1>
+            <h1>Authors</h1>
             <div className={scss.grid}>
                 {users.map(({name, id}) => (
                     <div key={`${id}`} className={scss.item}>
