@@ -1,0 +1,42 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns {
+    align-self: center;
+    margin-top: 24px;
+    font-size: 18px;
+
+    button {
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+}
+
+.carousel {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.slide {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    list-style-type: none;
+    text-align: center;
+
+    @media (max-width: 991px) {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+
+    &._active {
+        display: block;
+    }
+}
