@@ -1,0 +1,40 @@
+.wrap,
+.overlay {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap,
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    position: fixed;
+    z-index: 1;
+
+}
+
+.overlay {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.body {
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+    width: 75vw;
+    min-height: 50vh;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}

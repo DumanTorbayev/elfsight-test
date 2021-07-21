@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+
+    .item {
+        border: 1px solid;
+        padding: 10px;
+        color: #000;
+    }
+
+    .name {
+        margin-bottom: 15px;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #7f7d7d;
+    }
+}

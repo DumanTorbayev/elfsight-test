@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 15px;
+
+    .item {
+        color: #000;
+        font-size: 0;
+    }
+
+    img {
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.popup {
+    font-size: 0;
+
+    img {
+        width: 100%;
+    }
+
+    .btn-wrap {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+        font-size: 16px;
+
+        button {
+            &:first-child {
+                margin-right: 8px;
+            }
+        }
+    }
+}

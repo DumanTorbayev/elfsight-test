@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+
+    .item {
+        border: 1px solid;
+        padding: 10px;
+        color: #000;
+    }
+
+    .img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .name {
+        margin-bottom: 15px;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #7f7d7d;
+    }
+}
