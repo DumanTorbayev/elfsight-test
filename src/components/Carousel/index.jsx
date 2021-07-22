@@ -20,7 +20,7 @@ export const Carousel = ({photos, currentIndex}) => {
 
     const goNext = () => {
         let index = activeIndex;
-        let slidesLength = photos.length - 1;
+        const slidesLength = photos.length - 1;
 
         if (index === slidesLength) {
             index = -1;
