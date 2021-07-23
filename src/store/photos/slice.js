@@ -24,7 +24,7 @@ const photos = createSlice({
 	initialState,
 	reducers: {},
 	extraReducers: builder => {
-		builder.addCase(getPhotosById.pending, (state, { payload }) => {
+		builder.addCase(getPhotosById.pending, (state) => {
 			state.loading = true
 		})
 		builder.addCase(getPhotosById.fulfilled, (state, { payload }) => {

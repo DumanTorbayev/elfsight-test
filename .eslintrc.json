@@ -24,11 +24,12 @@
         "indent": ["warn", "tab", { "VariableDeclarator": { "let": 2, "const": 3 } }],
         "jsx-quotes": ["warn", "prefer-double"],
         "semi": ["error", "never"],
-        "no-tabs": ["error", { "allowIndentationTabs": true }],
+        "no-tabs": ["warn", { "allowIndentationTabs": true }],
         "react/prop-types": 0,
         "react/jsx-indent": [2, "tab"],
         "react/jsx-indent-props": [2, "tab"],
         "react/react-in-jsx-scope": "off",
-        "spaced-comment": ["warn", "always"]
+        "spaced-comment": ["warn", "always"],
+        "no-trailing-spaces": ["warn", { "skipBlankLines": true, "ignoreComments": true }]
     }
 }

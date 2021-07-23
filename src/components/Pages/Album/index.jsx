@@ -3,7 +3,6 @@ import styles from './Album.module.scss'
 import { useParams, Link } from 'react-router-dom'
 import { useActions } from '../../../hooks/useActions'
 import { useSelector } from 'react-redux'
-
 import { Preloader } from '../../UI/Preloader'
 import { BackButton } from '../../BackButton'
 import { getAlbums } from '../../../store/albums/selector'

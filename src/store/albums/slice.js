@@ -5,7 +5,11 @@ export const getAlbumsById = createAsyncThunk(
 	'getAlbumsById',
 	async (id) => {
 		try {
-			const data = await fetchAlbums(id)
+			const data = await Promise.all(fetchAlbums(id).map(async url => {
+				const response = await fetch(url)
+				return await response.json()
+			}))
+
 			const dataObj = { ...data }
 
 			return dataObj['0'].map(item1 => {
