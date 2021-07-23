@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/elfsight-test/static/css/main.c7cb49a4.chunk.css",
-    "main.js": "/elfsight-test/static/js/main.4eb8b940.chunk.js",
-    "main.js.map": "/elfsight-test/static/js/main.4eb8b940.chunk.js.map",
+    "main.js": "/elfsight-test/static/js/main.2ca37e9b.chunk.js",
+    "main.js.map": "/elfsight-test/static/js/main.2ca37e9b.chunk.js.map",
     "runtime-main.js": "/elfsight-test/static/js/runtime-main.27a2b8a5.js",
     "runtime-main.js.map": "/elfsight-test/static/js/runtime-main.27a2b8a5.js.map",
     "static/css/2.679831fc.chunk.css": "/elfsight-test/static/css/2.679831fc.chunk.css",
-    "static/js/2.6ac5ef63.chunk.js": "/elfsight-test/static/js/2.6ac5ef63.chunk.js",
-    "static/js/2.6ac5ef63.chunk.js.map": "/elfsight-test/static/js/2.6ac5ef63.chunk.js.map",
+    "static/js/2.e7ac74f1.chunk.js": "/elfsight-test/static/js/2.e7ac74f1.chunk.js",
+    "static/js/2.e7ac74f1.chunk.js.map": "/elfsight-test/static/js/2.e7ac74f1.chunk.js.map",
     "index.html": "/elfsight-test/index.html",
     "static/css/2.679831fc.chunk.css.map": "/elfsight-test/static/css/2.679831fc.chunk.css.map",
     "static/css/main.c7cb49a4.chunk.css.map": "/elfsight-test/static/css/main.c7cb49a4.chunk.css.map",
-    "static/js/2.6ac5ef63.chunk.js.LICENSE.txt": "/elfsight-test/static/js/2.6ac5ef63.chunk.js.LICENSE.txt"
+    "static/js/2.e7ac74f1.chunk.js.LICENSE.txt": "/elfsight-test/static/js/2.e7ac74f1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.27a2b8a5.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.6ac5ef63.chunk.js",
+    "static/js/2.e7ac74f1.chunk.js",
     "static/css/main.c7cb49a4.chunk.css",
-    "static/js/main.4eb8b940.chunk.js"
+    "static/js/main.2ca37e9b.chunk.js"
   ]
 }
