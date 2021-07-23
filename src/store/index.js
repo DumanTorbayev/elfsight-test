@@ -1,5 +1,5 @@
-import {getUsers} from "./users/slice";
-import {getAlbums, getPhotos} from "./albums/slice";
-import {getPhotosById} from "./photos/slice";
+import { getAllUsers } from './users/slice'
+import { getAlbumsById } from './albums/slice'
+import { getPhotosById } from './photos/slice'
 
-export default {getUsers, getAlbums, getPhotos, getPhotosById}
+export default { getAllUsers, getAlbumsById, getPhotosById }

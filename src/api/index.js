@@ -1,15 +1,12 @@
-export const fetchUsers = () => {
-    return fetch('https://jsonplaceholder.typicode.com/users')
-}
+import { API_URL } from '../constants'
+
+export const fetchUsers = () => fetch(`${API_URL}/users`)
 
 export const fetchAlbums = (id) => {
-    return fetch(`https://jsonplaceholder.typicode.com/users/${id}/albums`)
+	return Promise.all([`${API_URL}/users/${id}/albums`, `${API_URL}/photos`].map(async url => {
+		const response = await fetch(url)
+		return await response.json()
+	}))
 }
 
-export const fetchAllPhotos = () => {
-    return fetch(`https://jsonplaceholder.typicode.com/photos`)
-}
-
-export const fetchPhotosById = (id) => {
-    return fetch(`https://jsonplaceholder.typicode.com/albums/${id}/photos`)
-}
+export const fetchPhotosById = (id) => fetch(`${API_URL}/albums/${id}/photos`)

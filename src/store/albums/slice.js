@@ -1,56 +1,45 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {fetchAlbums, fetchAllPhotos} from "../../api";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { fetchAlbums } from '../../api'
 
-export const getAlbums = createAsyncThunk(
-    'getAlbums',
-    async (id) => {
-        try {
-            const response = await fetchAlbums(id)
+export const getAlbumsById = createAsyncThunk(
+	'getAlbumsById',
+	async (id) => {
+		try {
+			const data = await fetchAlbums(id)
+			const dataObj = { ...data }
 
-            return await response.json()
-        } catch (error) {
-            console.log(error);
-        }
-    }
-)
+			return dataObj['0'].map(item1 => {
+				const filteredArr = dataObj['1'].filter(item2 => item1.id === item2.albumId)
 
-export const getPhotos = createAsyncThunk(
-    'getPhotos',
-    async () => {
-        try {
-            const response = await fetchAllPhotos()
+				item1.photosCount = filteredArr.length
+				item1.thumbnailUrl = filteredArr[0].thumbnailUrl
 
-            return await response.json()
-        } catch (error) {
-            console.log(error);
-        }
-    }
+				return item1
+			})
+		} catch (error) {
+			console.log(error)
+		}
+	}
 )
 
 const initialState = {
-    albums: [],
-    photos: [],
-    currentPhotos: [],
-    loading: false,
+	data: [],
+	loading: false
 }
 
 const albums = createSlice({
-    name: 'albums',
-    initialState,
-    reducers: {},
-    extraReducers: builder => {
-        builder.addCase(getAlbums.pending, (state, {payload}) => {
-            state.loading = true
-        })
-        builder.addCase(getAlbums.fulfilled, (state, {payload}) => {
-            state.albums = payload
-            state.loading = false
-        })
-        builder.addCase(getPhotos.fulfilled, (state, {payload}) => {
-            state.photos = payload
-        })
-    }
+	name: 'albums',
+	initialState,
+	reducers: {},
+	extraReducers: builder => {
+		builder.addCase(getAlbumsById.pending, (state) => {
+			state.loading = true
+		})
+		builder.addCase(getAlbumsById.fulfilled, (state, { payload }) => {
+			state.data = payload
+			state.loading = false
+		})
+	}
 })
 
-export const {} = albums.actions
 export default albums.reducer

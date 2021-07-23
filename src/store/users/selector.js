@@ -1,1 +1,1 @@
-export const takeUsers = (state) => state.users
+export const getUsers = (state) => state.users

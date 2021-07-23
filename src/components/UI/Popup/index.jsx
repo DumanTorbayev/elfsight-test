@@ -1,13 +1,13 @@
-import React from 'react';
-import scss from './Popup.module.scss'
+import React from 'react'
+import styles from './Popup.module.scss'
 
-export const Popup = ({children, setPopupInfo}) => {
-    return (
-        <div className={scss.wrap}>
-            <div onClick={() => setPopupInfo({index: null, open: false})} className={scss.overlay}/>
-            <div className={scss.body}>
-                {children}
-            </div>
-        </div>
-    );
-};
+export const Popup = ({ children, handleClosePopup }) => {
+	return (
+		<div className={styles.wrap}>
+			<div onClick={handleClosePopup} className={styles.overlay}/>
+			<div className={styles.body}>
+				{children}
+			</div>
+		</div>
+	)
+}

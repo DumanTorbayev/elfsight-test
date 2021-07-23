@@ -1,1 +1,1 @@
-export const takePhotos = (state) => state.photos
+export const getPhotos = (state) => state.photos

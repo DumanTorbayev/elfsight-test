@@ -1,50 +1,48 @@
-import React, {useState} from 'react';
-import scss from './Carousel.module.scss'
-import {Button} from "../UI/Button";
+import React, { useState } from 'react'
+import styles from './Carousel.module.scss'
+import { Button } from '../UI/Button'
 
-export const Carousel = ({photos, currentIndex}) => {
-    const [activeIndex, setActiveIndex] = useState(currentIndex)
+export const Carousel = ({ items, currentIndex }) => {
+	const [activeIndex, setActiveIndex] = useState(currentIndex)
 
-    const goPrev = () => {
-        let index = activeIndex
-        const slidesLength = photos.length;
+	const onPrev = () => {
+		let index = activeIndex
 
-        if (index < 1) {
-            index = slidesLength;
-        }
+		if (index < 1) {
+			index = items.length
+		}
 
-        --index;
+		--index
 
-        setActiveIndex(index)
-    }
+		setActiveIndex(index)
+	}
 
-    const goNext = () => {
-        let index = activeIndex;
-        let slidesLength = photos.length - 1;
+	const onNext = () => {
+		let index = activeIndex
 
-        if (index === slidesLength) {
-            index = -1;
-        }
+		if (index === items.length - 1) {
+			index = -1
+		}
 
-        ++index;
+		++index
 
-        setActiveIndex(index)
-    }
+		setActiveIndex(index)
+	}
 
-    return (
-        <div className={scss.wrap}>
-            <ul className={scss.carousel}>
-                {photos.map(({id, url, title}, index) => (
-                    <li key={id} className={`${scss.slide} ${index === activeIndex ? `${scss['_active']}` : ''}`}>
-                        <img id={id} src={url} alt={title}/>
-                    </li>
-                ))}
-            </ul>
+	return (
+		<div className={styles.wrap}>
+			<ul className={styles.carousel}>
+				{items.map(({ id, url, title }, index) => (
+					<li key={id} className={`${styles.slide} ${index === activeIndex ? `${styles._active}` : ''}`}>
+						<img id={id} src={url} alt={title}/>
+					</li>
+				))}
+			</ul>
 
-            <div className={scss.btns}>
-                <Button onClick={goPrev}>Prev</Button>
-                <Button onClick={goNext}>Next</Button>
-            </div>
-        </div>
-    );
-};
+			<div className={styles.btns}>
+				<Button onClick={onPrev}>Prev</Button>
+				<Button onClick={onNext}>Next</Button>
+			</div>
+		</div>
+	)
+}
