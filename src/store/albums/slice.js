@@ -10,10 +10,8 @@ export const getAlbumsById = createAsyncThunk(
 				return await response.json()
 			}))
 
-			const dataObj = { ...data }
-
-			return dataObj['0'].map(item1 => {
-				const filteredArr = dataObj['1'].filter(item2 => item1.id === item2.albumId)
+			return data[0].map(item1 => {
+				const filteredArr = data[1].filter(item2 => item1.id === item2.albumId)
 
 				item1.photosCount = filteredArr.length
 				item1.thumbnailUrl = filteredArr[0].thumbnailUrl
